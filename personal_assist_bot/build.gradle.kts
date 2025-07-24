@@ -9,7 +9,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(23)
+		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
 
@@ -32,4 +32,12 @@ dependencies {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+springBoot {
+	mainClass.set("ru.taranenko.personal_assist_bot.PersonalAssistBotApplication")
+}
+
+tasks.bootJar {
+	archiveFileName = "personal-assist-bot.jar"
 }
